@@ -37,7 +37,7 @@ func (this SuicideKing) move(game *chess.Game) *chess.Move {
 	}
 	// Choose randomly if no move was interesting
 	if chosen == nil {
-		TieBreak(valid)
+		return TieBreak(valid)
 	}
 	return chosen
 }
