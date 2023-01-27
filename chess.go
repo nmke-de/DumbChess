@@ -6,21 +6,11 @@ import (
 	//"strconv"
 	"github.com/notnil/chess"
 	//"github.com/notnil/chess/uci"
-	"fmt"
 )
 
 type Player interface {
 	move(game *chess.Game) *chess.Move
 	name() string
-}
-
-type RandomMove bool
-func (this RandomMove) move(game *chess.Game) *chess.Move {
-	valid := game.ValidMoves()
-	return valid[rand.Intn(len(valid))]
-}
-func (this RandomMove) name() string {
-	return "RandomMove"
 }
 
 type FirstValid bool
