@@ -2,8 +2,8 @@ package main
 
 import "github.com/notnil/chess"
 
-type Huddle bool
-func (this Huddle) move(game *chess.Game) *chess.Move {
+type Swarm bool
+func (this Swarm) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	// Determine color and target king
 	color := game.Position().Board().Piece(valid[0].S1()).Color()
@@ -23,14 +23,14 @@ func (this Huddle) move(game *chess.Game) *chess.Move {
 	}
 	// Evaluate all valid moves
 	var chosen *chess.Move
-	ceval := 85
+	ceval := 0
 	for _, m := range valid {
 		// Only interested in not the king
 		if game.Position().Board().Piece(m.S1()).Type() == chess.King {
 			continue
 		}
 		eval := KingDist(m.S2(), sq)
-		if eval < ceval {
+		if eval > ceval {
 			ceval = eval
 			chosen = m
 		}
@@ -41,6 +41,6 @@ func (this Huddle) move(game *chess.Game) *chess.Move {
 	}
 	return chosen
 }
-func (this Huddle) name() string {
-	return "Huddle"
+func (this Swarm) name() string {
+	return "Swarm"
 }
