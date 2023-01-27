@@ -9,10 +9,11 @@ import (
 )
 
 func main() {
+	
 	rand.Seed(time.Now().UTC().UnixNano())
 	game := chess.NewGame()
-	var white Player = Human(true)
-	var black Player = MinOpponentMoves(true)
+	var white Player = RandomPlayer()
+	var black Player = RandomPlayer()
 	// Introduce players
 	print("White: ")
 	println(white.name())
