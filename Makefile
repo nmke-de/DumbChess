@@ -1,6 +1,6 @@
 run: DumbChess
 	@./DumbChess
 
-DumbChess: chess.go
+DumbChess: *.go
 	tinygo build -scheduler none -panic trap .
 	strip DumbChess
