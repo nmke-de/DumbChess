@@ -516,53 +516,6 @@ func (this Swarm) name() string {
 	return "Swarm"
 }
 
-type Human bool
-func (this Human) move(game *chess.Game) *chess.Move {
-	var an chess.AlgebraicNotation
-	mh := game.Moves()
-	if len(mh) > 0 {
-		print("Played by adversary: ")
-		println(an.Encode(game.Position(), mh[len(mh)-1]))
-	}
-	println(game.Position().Board().Draw())
-	var input string
-	for {
-		print("Your move: ")
-		n, err := fmt.Scanln(&input)
-		if err != nil || n == 0 {
-			println("Invalid input.")
-			continue
-		}
-		err = game.MoveStr(input)
-		if err == nil {
-			return game.Moves()[len(game.Moves()) - 1]
-		}
-		println("Invalid input or move.")
-	}
-}
-func (this Human) name() string {
-	return "Human player"
-}
-
-
-
-// eval Method
-func EvalMethod(this chess.Method) string {
-	switch this {
-		case 0: return "Not finished or no outcome"
-		case 1: return "Checkmate"
-		case 2: return "Resignation"
-		case 3: return "Offered draw"
-		case 4: return "Stalemate"
-		case 5: return "Threefold repetition of game state"
-		case 6: return "Fivefold repetition of game state"
-		case 7: return "FiftyMoveRule"
-		case 8: return "SeventyFiveMoveRule"
-		case 9: return "Insufficient material"
-		default: return "Invalid method"
-	}
-}
-
 
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
