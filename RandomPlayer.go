@@ -20,6 +20,7 @@ func RandomPlayer() Player {
 		Pacifist(true),
 		PawnsFirst(true),
 		RandomMove(true),
+		Schizophrenia(true),
 		//Stockfish(true),
 		SuicideKing(true),
 		Swarm(true),
