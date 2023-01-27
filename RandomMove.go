@@ -1,9 +1,6 @@
 package main
 
-import (
-	"math/rand"
-	"github.com/notnil/chess"
-)
+import "github.com/notnil/chess"
 
 type RandomMove bool
 func (this RandomMove) move(game *chess.Game) *chess.Move {

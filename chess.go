@@ -8,28 +8,6 @@ import (
 	//"github.com/notnil/chess/uci"
 )
 
-type Player interface {
-	move(game *chess.Game) *chess.Move
-	name() string
-}
-
-type FirstValid bool
-func (this FirstValid) move(game *chess.Game) *chess.Move {
-	return game.ValidMoves()[0]
-}
-func (this FirstValid) name() string {
-	return "FirstValid"
-}
-
-type LastValid bool
-func (this LastValid) move(game *chess.Game) *chess.Move {
-	valid := game.ValidMoves()
-	return valid[len(valid) - 1]
-}
-func (this LastValid) name() string {
-	return "LastValid"
-}
-
 type CheckCapture bool
 func (this CheckCapture) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
