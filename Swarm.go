@@ -3,6 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 type Swarm bool
+
 func (this Swarm) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	// Determine color and target king
@@ -43,6 +44,7 @@ func (this Swarm) move(game *chess.Game) *chess.Move {
 	}
 	return TieBreak(best)
 }
+
 func (this Swarm) name() string {
 	return "Swarm"
 }
