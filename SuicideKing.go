@@ -3,6 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 type SuicideKing bool
+
 func (this SuicideKing) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	// Determine color and target king
@@ -22,7 +23,7 @@ func (this SuicideKing) move(game *chess.Game) *chess.Move {
 		}
 	}
 	// Evaluate all valid moves
-	var chosen *chess.Move
+	var best []*chess.Move
 	ceval := 85
 	for _, m := range valid {
 		// Only interested in the king
@@ -32,15 +33,18 @@ func (this SuicideKing) move(game *chess.Game) *chess.Move {
 		eval := KingDist(m.S2(), sq) * 10 + ManhattanDist(m.S2(), sq)
 		if eval < ceval {
 			ceval = eval
-			chosen = m
+			best = []*chess.Move{m}
+		} else if eval == ceval {
+			best = append(best, m)
 		}
 	}
 	// Choose randomly if no move was interesting
-	if chosen == nil {
+	if len(best) == 0 {
 		return TieBreak(valid)
 	}
-	return chosen
+	return TieBreak(best)
 }
+
 func (this SuicideKing) name() string {
 	return "SuicideKing"
 }

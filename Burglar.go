@@ -3,6 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 type Burglar bool
+
 func (this Burglar) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	var best []*chess.Move
@@ -31,6 +32,7 @@ func (this Burglar) move(game *chess.Game) *chess.Move {
 	}
 	return TieBreak(best)
 }
+
 func (this Burglar) name() string {
 	return "Burglar"
 }
