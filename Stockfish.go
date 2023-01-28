@@ -1,6 +1,6 @@
 package main
 
-/*
+
 import (
 	"math/rand"
 	"time"
@@ -11,6 +11,7 @@ import (
 
 // (stateless) Stockfish. Requires stockfish to be installed.
 type Stockfish bool
+
 func (this Stockfish) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	eng, err := uci.New("stockfish")
@@ -33,7 +34,7 @@ func (this Stockfish) move(game *chess.Game) *chess.Move {
 	}
 	return move
 }
+
 func (this Stockfish) name() string {
 	return "Stockfish"
 }
-*/
