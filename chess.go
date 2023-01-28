@@ -3,9 +3,7 @@ package main
 import (
 	"math/rand"
 	"time"
-	//"strconv"
 	"github.com/notnil/chess"
-	//"github.com/notnil/chess/uci"
 )
 
 func main() {
