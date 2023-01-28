@@ -12,6 +12,7 @@ func RandomPlayer() Player {
 		CheckCapture(true),
 		Coward(true),
 		Edgelord(true),
+		EdgierEdgelord(true),
 		FirstValid(true),
 		Huddle(true),
 		Human(true),
