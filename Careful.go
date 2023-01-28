@@ -9,7 +9,7 @@ func (this Careful) move(game *chess.Game) *chess.Move {
 	opponent := CCCP(true)
 	var best []*chess.Move
 	var next *chess.Game
-	ceval := 0
+	ceval := 110
 	for _, m := range valid {
 		// Evaluate danger level
 		eval := 0
@@ -39,9 +39,6 @@ func (this Careful) move(game *chess.Game) *chess.Move {
 		} else if eval == ceval {
 			best = append(best, m)
 		}
-	}
-	if len(best) == 0 {
-		return TieBreak(valid)
 	}
 	return TieBreak(best)
 }
