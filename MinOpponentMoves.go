@@ -3,6 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 type MinOpponentMoves bool
+
 func (this MinOpponentMoves) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	var chosen *chess.Move
@@ -19,6 +20,7 @@ func (this MinOpponentMoves) move(game *chess.Game) *chess.Move {
 	}
 	return chosen
 }
+
 func (this MinOpponentMoves) name() string {
 	return "MinOpponentMoves"
 }

@@ -7,6 +7,7 @@ func RandomPlayer() Player {
 	player_list := []Player{
 		AssassinationClassroom(true),
 		Burglar(true),
+		Careful(true),
 		CCCP(true),
 		Centrist(true),
 		CheckCapture(true),
