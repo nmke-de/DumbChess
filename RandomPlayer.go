@@ -21,9 +21,11 @@ func RandomPlayer() Player {
 		PawnsFirst(true),
 		RandomMove(true),
 		Schizophrenia(true),
+		Slow(true),
 		//Stockfish(true),
 		SuicideKing(true),
 		Swarm(true),
+		Traveller(true),
 	}
 	return player_list[rand.Intn(len(player_list))]
 }
