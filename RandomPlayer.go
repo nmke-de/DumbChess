@@ -22,7 +22,7 @@ func RandomPlayer() Player {
 		RandomMove(true),
 		Schizophrenia(true),
 		Slow(true),
-		Stockfish(true),
+		newUCI("stockfish"),
 		SuicideKing(true),
 		Swarm(true),
 		Traveller(true),

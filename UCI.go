@@ -9,12 +9,18 @@ import (
 )
 
 
-// (stateless) Stockfish. Requires stockfish to be installed.
-type Stockfish bool
+// (stateless) UCI player. Requires the related engine (i.e. Stockfish) to be installed.
+type UCI struct {
+	exec string
+}
 
-func (this Stockfish) move(game *chess.Game) *chess.Move {
+func newUCI (exec string) UCI {
+	return UCI{exec}
+}
+
+func (this UCI) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
-	eng, err := uci.New("stockfish")
+	eng, err := uci.New(this.exec)
 	if err != nil {
 		panic(err)
 	}
@@ -35,6 +41,6 @@ func (this Stockfish) move(game *chess.Game) *chess.Move {
 	return move
 }
 
-func (this Stockfish) name() string {
-	return "Stockfish"
+func (this UCI) name() string {
+	return this.exec
 }
