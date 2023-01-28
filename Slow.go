@@ -2,21 +2,23 @@ package main
 
 import "github.com/notnil/chess"
 
-// Move pieces as far as possible
+// Move pieces not as far as possible
 type Slow bool
 
 func (this Slow) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
-	var chosen *chess.Move
+	var best []*chess.Move
 	ceval := 16
 	for _, m := range valid {
 		eval := KingDist(m.S1(), m.S2())
-		if eval <= ceval {
+		if eval < ceval {
 			ceval = eval
-			chosen = m
+			best = []*chess.Move{m}
+		} else if eval == ceval {
+			best = append(best, m)
 		}
 	}
-	return chosen
+	return TieBreak(best)
 }
 
 func (this Slow) name() string {
