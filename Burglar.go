@@ -5,7 +5,7 @@ import "github.com/notnil/chess"
 type Burglar bool
 func (this Burglar) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
-	var chosen *chess.Move
+	var best []*chess.Move
 	ceval := 0
 	for _, m := range valid {
 		eval := -1
@@ -21,13 +21,15 @@ func (this Burglar) move(game *chess.Game) *chess.Move {
 		}
 		if eval > ceval {
 			ceval = eval
-			chosen = m
+			best = []*chess.Move{m}
+		} else if eval == ceval {
+			best = append(best, m)
 		}
 	}
-	if chosen == nil {
+	if len(best) == 0 {
 		return TieBreak(valid)
 	}
-	return chosen
+	return TieBreak(best)
 }
 func (this Burglar) name() string {
 	return "Burglar"
