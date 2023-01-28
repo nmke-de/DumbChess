@@ -3,6 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 type PawnsFirst bool
+
 func (this PawnsFirst) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	var chosen *chess.Move
@@ -27,6 +28,7 @@ func (this PawnsFirst) move(game *chess.Game) *chess.Move {
 	}
 	return chosen
 }
+
 func (this PawnsFirst) name() string {
 	return "PawnsFirst"
 }
