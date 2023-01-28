@@ -10,7 +10,7 @@ func (this Slow) move(game *chess.Game) *chess.Move {
 	var chosen *chess.Move
 	ceval := 16
 	for _, m := range valid {
-		eval := ManhattanDist(m.S1(), m.S2())
+		eval := KingDist(m.S1(), m.S2())
 		if eval <= ceval {
 			ceval = eval
 			chosen = m
