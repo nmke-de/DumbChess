@@ -5,7 +5,7 @@ import "github.com/notnil/chess"
 type KnightlyOrder bool
 func (this KnightlyOrder) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
-	var chosen *chess.Move
+	var best []*chess.Move
 	ceval := 0
 	for _, m := range valid {
 		eval := 0
@@ -22,13 +22,15 @@ func (this KnightlyOrder) move(game *chess.Game) *chess.Move {
 		}
 		if eval > ceval {
 			ceval = eval
-			chosen = m
+			best = []*chess.Move{m}
+		} else if eval == ceval {
+			best = append(best, m)
 		}
 	}
-	if chosen == nil {
+	if len(best) == 0 {
 		return TieBreak(valid)
 	}
-	return chosen
+	return TieBreak(best)
 }
 func (this KnightlyOrder) name() string {
 	return "KnightlyOrder"
