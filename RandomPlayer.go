@@ -8,6 +8,7 @@ func RandomPlayer() Player {
 		AssassinationClassroom(true),
 		Burglar(true),
 		Careful(true),
+		Careless(true),
 		CCCP(true),
 		Centrist(true),
 		CheckCapture(true),
