@@ -10,11 +10,10 @@ Human player. Get valid user input and return it.
 */
 type Human bool
 func (this Human) move(game *chess.Game) *chess.Move {
-	var an chess.AlgebraicNotation
-	mh := game.Moves()
-	if len(mh) > 0 {
+	if len(game.Moves()) > 0 {
+		mh := game.Moves()
 		print("Played by adversary: ")
-		println(an.Encode(game.Position(), mh[len(mh)-1]))
+		println(movestring(game.Position(), mh[len(mh)-1]))
 	}
 	println(game.Position().Board().Draw())
 	var input string
