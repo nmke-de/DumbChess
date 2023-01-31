@@ -1,6 +1,9 @@
 package main
 
-import "github.com/notnil/chess"
+import (
+	"time"
+	"github.com/notnil/chess"
+)
 
 type Careless bool
 
@@ -10,6 +13,7 @@ func (this Careless) move(game *chess.Game) *chess.Move {
 	var best []*chess.Move
 	var next *chess.Game
 	ceval := 0
+	t := time.Now()
 	for _, m := range valid {
 		// Evaluate danger level
 		eval := 0
@@ -38,6 +42,11 @@ func (this Careless) move(game *chess.Game) *chess.Move {
 			best = []*chess.Move{m}
 		} else if eval == ceval {
 			best = append(best, m)
+		}
+		// Check for time limit. This is deemed necessary to stop evaluations that take too long.
+		if time.Now().Sub(t) > time.Second {
+			print(".")
+			break
 		}
 	}
 	return TieBreak(best)
