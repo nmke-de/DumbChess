@@ -46,8 +46,10 @@ Moves:
 
 If the human player is picked, you will be prompted to enter a move in the algebraic notation (i.e. `e4` or `Nxf3`). Only valid moves will be accepted.
 
+In order to specify certain player for a match, simply add its name or part of its name as an argument, i.e. `./DumbChess stockfish MinOpponent`. The name is not case-sensitive.
+
 To take a better look at a match move by move, I will refer you to copy the text behind `Moves:` to `https://www.chess.com/analysis`.
 
 ## Dumb chess engines (and Stockfish)
 
-For a list of implemented chess engines, refer to [RandomPlayer.go](RandomPlayer.go).
+For a list of implemented chess engines, refer to [playerList.go](playerList.go).
