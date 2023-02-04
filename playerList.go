@@ -19,6 +19,7 @@ var playerList []Player = []Player{
 	LastValid(true),
 	MaxOpponentMoves(true),
 	MinOpponentMoves(true),
+	newNotSinglePiece(),
 	Pacifist(true),
 	PawnsFirst(true),
 	QueenOfTheHill(true),
