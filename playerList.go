@@ -26,6 +26,7 @@ var playerList []Player = []Player{
 	RandomMove(true),
 	ReverseStarting{},
 	Safe{},
+	SameColor{},
 	Schizophrenia(true),
 	newSinglePiece(),
 	Slow(true),
