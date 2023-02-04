@@ -20,6 +20,7 @@ var playerList []Player = []Player{
 	MaxOpponentMoves(true),
 	MinOpponentMoves(true),
 	newNotSinglePiece(),
+	OppositeColor{},
 	Pacifist(true),
 	PawnsFirst(true),
 	QueenOfTheHill(true),
