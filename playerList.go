@@ -24,6 +24,7 @@ var playerList []Player = []Player{
 	PawnsFirst(true),
 	QueenOfTheHill(true),
 	RandomMove(true),
+	ReverseStarting{},
 	Safe{},
 	Schizophrenia(true),
 	newSinglePiece(),
