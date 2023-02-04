@@ -32,4 +32,5 @@ var playerList []Player = []Player{
 	SuicideKing(true),
 	Swarm(true),
 	Traveller(true),
+	Unsafe{},
 }
