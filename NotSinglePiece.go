@@ -53,5 +53,5 @@ func (this NotSinglePiece) move(game *chess.Game) *chess.Move {
 }
 
 func (this NotSinglePiece) name() string {
-	return "NotSinglePiece"
+	return "MultiPiece"
 }
