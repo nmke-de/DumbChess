@@ -31,6 +31,7 @@ var playerList []Player = []Player{
 	newUCI("stockfish"),
 	SuicideKing(true),
 	Swarm(true),
+	SwissSafe{},
 	Traveller(true),
 	Unsafe{},
 }
