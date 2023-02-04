@@ -24,6 +24,7 @@ var playerList []Player = []Player{
 	QueenOfTheHill(true),
 	RandomMove(true),
 	Schizophrenia(true),
+	newSinglePiece(),
 	Slow(true),
 	newUCI("stockfish"),
 	SuicideKing(true),
