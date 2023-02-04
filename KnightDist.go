@@ -2,6 +2,7 @@ package main
 
 import "github.com/notnil/chess"
 
+// return the number of moves needed for a knight to traverse from one square to another.
 func KnightDist (s1 chess.Square, s2 chess.Square) int {
 	if s1 == s2 {
 		return 0
