@@ -26,6 +26,7 @@ var playerList []Player = []Player{
 	QueenOfTheHill(true),
 	RandomMove(true),
 	ReverseStarting{},
+	Rookies{},
 	Safe{},
 	SameColor{},
 	Schizophrenia(true),
