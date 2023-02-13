@@ -42,6 +42,11 @@ func main() {
 			println("" + strconv.Itoa(score) + "\t" + player.name())
 		}
 		return
+	} else if len(args) > 0 && args[0] == "-l" {
+		for _, p := range playerList {
+			println(p.name())
+		}
+		return
 	} else if len(args) > 0 {
 		white = findPlayer(args[0])
 	} else {
