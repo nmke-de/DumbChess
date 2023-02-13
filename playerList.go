@@ -14,6 +14,7 @@ var playerList []Player = []Player{
 	FirstValid(true),
 	Huddle(true),
 	Human(true),
+	Inquisition{},
 	KingOfTheHill(true),
 	KnightlyOrder(true),
 	LadiesFirst{},
