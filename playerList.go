@@ -16,6 +16,7 @@ var playerList []Player = []Player{
 	Human(true),
 	KingOfTheHill(true),
 	KnightlyOrder(true),
+	LadiesFirst{},
 	LastValid(true),
 	MaxOpponentMoves(true),
 	MinOpponentMoves(true),
