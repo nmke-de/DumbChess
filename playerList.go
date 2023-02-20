@@ -11,6 +11,7 @@ var playerList []Player = []Player{
 	Coward(true),
 	Edgelord(true),
 	EdgierEdgelord(true),
+	ElMid{},
 	FirstValid(true),
 	Huddle(true),
 	Human(true),
