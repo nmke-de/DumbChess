@@ -19,7 +19,7 @@ func KnightDist (s1 chess.Square, s2 chess.Square) int {
 				if next_square == s2 {
 					return dist
 				}
-				if visited[next_square] {
+				if !visited[next_square] {
 					next_frontier = append(next_frontier, next_square)
 					visited[next_square] = true
 				}
@@ -29,7 +29,7 @@ func KnightDist (s1 chess.Square, s2 chess.Square) int {
 		next_frontier = []chess.Square{}
 	}
 	// Dummy
-	return 0
+	return 100
 }
 
 func knight_moves (sq chess.Square) []chess.Square {

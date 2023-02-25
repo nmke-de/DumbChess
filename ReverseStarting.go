@@ -63,9 +63,9 @@ func (this ReverseStarting) move(game *chess.Game) *chess.Move {
 					continue
 				}
 				if square_color(m.S2()) == chess.Black {
-					eval = KingDist(m.S2(), chess.C1)
+					eval = BishopDist(m.S2(), chess.C1)
 				} else {
-					eval = KingDist(m.S2(), chess.F1)
+					eval = BishopDist(m.S2(), chess.F1)
 				}
 			case chess.WhiteBishop:
 				// Ignore if target square has been reached
@@ -73,9 +73,9 @@ func (this ReverseStarting) move(game *chess.Game) *chess.Move {
 					continue
 				}
 				if square_color(m.S2()) == chess.Black {
-					eval = KingDist(m.S2(), chess.F8)
+					eval = BishopDist(m.S2(), chess.F8)
 				} else {
-					eval = KingDist(m.S2(), chess.C8)
+					eval = BishopDist(m.S2(), chess.C8)
 				}
 			case chess.BlackRook:
 				// Ignore if target square has been reached
