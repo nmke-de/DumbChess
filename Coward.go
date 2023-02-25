@@ -3,6 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 type Coward bool
+
 func (this Coward) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	// Determine color and target king
@@ -25,7 +26,7 @@ func (this Coward) move(game *chess.Game) *chess.Move {
 	var chosen *chess.Move
 	ceval := 0
 	for _, m := range valid {
-		eval := KingDist(m.S2(), sq) * 10 + ManhattanDist(m.S2(), sq)
+		eval := KingDist(m.S2(), sq)*10 + ManhattanDist(m.S2(), sq)
 		if eval > ceval {
 			ceval = eval
 			chosen = m

@@ -24,18 +24,25 @@ func (this CCCP) move(game *chess.Game) *chess.Move {
 		}
 		// Check for capture
 		switch game.Position().Board().Piece(m.S2()).Type() {
-			case chess.Pawn: eval += 10
-			case chess.Bishop, chess.Knight: eval += 30
-			case chess.Rook: eval += 50
-			case chess.Queen: eval += 90
-			default: eval += 0
+		case chess.Pawn:
+			eval += 10
+		case chess.Bishop, chess.Knight:
+			eval += 30
+		case chess.Rook:
+			eval += 50
+		case chess.Queen:
+			eval += 90
+		default:
+			eval += 0
 		}
 		// Otherwise push as deep as possible
-			rank := Rank2Int(m.S2().Rank())
-			switch color {
-				case chess.White: eval += rank
-				case chess.Black: eval += 9 - rank
-			}
+		rank := Rank2Int(m.S2().Rank())
+		switch color {
+		case chess.White:
+			eval += rank
+		case chess.Black:
+			eval += 9 - rank
+		}
 		if eval > ceval {
 			ceval = eval
 			chosen = m

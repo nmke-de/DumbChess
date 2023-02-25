@@ -3,6 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 type CheckCapture bool
+
 func (this CheckCapture) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	chosen := valid[0]

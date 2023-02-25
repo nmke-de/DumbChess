@@ -30,19 +30,19 @@ func (this LadiesFirst) move(game *chess.Game) *chess.Move {
 			eval += 2 * (3 - QueenDist(m.S2(), sq))
 		}
 		switch game.Position().Board().Piece(m.S1()).Type() {
-			case chess.Queen:
-				eval += 2 * (3 - QueenDist(m.S2(), sq))
-			case chess.Pawn:
-				eval += 1 + Dist2Edge(m.S1())
+		case chess.Queen:
+			eval += 2 * (3 - QueenDist(m.S2(), sq))
+		case chess.Pawn:
+			eval += 1 + Dist2Edge(m.S1())
 		}
 		switch game.Position().Board().Piece(m.S2()).Type() {
-			case chess.NoPieceType:
-				eval += 0
-			case chess.Queen:
-				// Jealousy
-				eval += 100
-			default:
-				eval += 1
+		case chess.NoPieceType:
+			eval += 0
+		case chess.Queen:
+			// Jealousy
+			eval += 100
+		default:
+			eval += 1
 		}
 		if eval > ceval {
 			ceval = eval

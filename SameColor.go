@@ -2,7 +2,7 @@ package main
 
 import "github.com/notnil/chess"
 
-type SameColor struct {}
+type SameColor struct{}
 
 func (this SameColor) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()

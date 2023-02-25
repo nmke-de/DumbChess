@@ -2,7 +2,7 @@ package main
 
 import "github.com/notnil/chess"
 
-type Safe struct {}
+type Safe struct{}
 
 func (this Safe) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
@@ -24,11 +24,16 @@ func (this Safe) move(game *chess.Game) *chess.Move {
 				}
 				if predicted.S2() == m.S2() {
 					switch game.Position().Board().Piece(m.S1()).Type() {
-						case chess.Pawn: eval += 1
-						case chess.Bishop, chess.Knight: eval += 3
-						case chess.Rook: eval += 5
-						case chess.Queen: eval += 9
-						default: eval += 0
+					case chess.Pawn:
+						eval += 1
+					case chess.Bishop, chess.Knight:
+						eval += 3
+					case chess.Rook:
+						eval += 5
+					case chess.Queen:
+						eval += 9
+					default:
+						eval += 0
 					}
 					break
 				}

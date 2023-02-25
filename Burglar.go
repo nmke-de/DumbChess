@@ -14,11 +14,16 @@ func (this Burglar) move(game *chess.Game) *chess.Move {
 			continue
 		}
 		switch game.Position().Board().Piece(m.S2()).Type() {
-			case chess.Pawn: eval = 1
-			case chess.Bishop, chess.Knight: eval = 3
-			case chess.Rook: eval = 5
-			case chess.Queen: eval = 9
-			default: eval = 0
+		case chess.Pawn:
+			eval = 1
+		case chess.Bishop, chess.Knight:
+			eval = 3
+		case chess.Rook:
+			eval = 5
+		case chess.Queen:
+			eval = 9
+		default:
+			eval = 0
 		}
 		if eval > ceval {
 			ceval = eval

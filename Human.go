@@ -9,6 +9,7 @@ import (
 Human player. Get valid user input and return it.
 */
 type Human bool
+
 func (this Human) move(game *chess.Game) *chess.Move {
 	if len(game.Moves()) > 0 {
 		mh := game.Moves()
@@ -26,7 +27,7 @@ func (this Human) move(game *chess.Game) *chess.Move {
 		}
 		err = game.MoveStr(input)
 		if err == nil {
-			return game.Moves()[len(game.Moves()) - 1]
+			return game.Moves()[len(game.Moves())-1]
 		}
 		println("Invalid input or move.")
 	}

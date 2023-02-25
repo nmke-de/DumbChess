@@ -1,8 +1,8 @@
 package main
 
 import (
-	"math/rand"
 	"github.com/notnil/chess"
+	"math/rand"
 )
 
 func TieBreak(moves []*chess.Move) *chess.Move {

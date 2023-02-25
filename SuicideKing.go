@@ -30,7 +30,7 @@ func (this SuicideKing) move(game *chess.Game) *chess.Move {
 		if game.Position().Board().Piece(m.S1()).Type() != chess.King {
 			continue
 		}
-		eval := KingDist(m.S2(), sq) * 10 + ManhattanDist(m.S2(), sq)
+		eval := KingDist(m.S2(), sq)*10 + ManhattanDist(m.S2(), sq)
 		if eval < ceval {
 			ceval = eval
 			best = []*chess.Move{m}

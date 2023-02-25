@@ -3,6 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 type MaxOpponentMoves bool
+
 func (this MaxOpponentMoves) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	var chosen *chess.Move

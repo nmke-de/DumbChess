@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/notnil/chess"
 	"math/rand"
 	"time"
-	"github.com/notnil/chess"
 )
 
 // Play match. Return outcome.

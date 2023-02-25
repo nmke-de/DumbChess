@@ -1,8 +1,8 @@
 package main
 
 import (
-	"time"
 	"github.com/notnil/chess"
+	"time"
 )
 
 type Careless bool
@@ -29,11 +29,16 @@ func (this Careless) move(game *chess.Game) *chess.Move {
 			}
 			// Raise danger level for capture
 			switch next.Position().Board().Piece(predicted.S2()).Type() {
-				case chess.Pawn: eval += 1
-				case chess.Bishop, chess.Knight: eval += 3
-				case chess.Rook: eval += 5
-				case chess.Queen: eval += 9
-				default: eval += 0
+			case chess.Pawn:
+				eval += 1
+			case chess.Bishop, chess.Knight:
+				eval += 3
+			case chess.Rook:
+				eval += 5
+			case chess.Queen:
+				eval += 9
+			default:
+				eval += 0
 			}
 		}
 		// Pick a move

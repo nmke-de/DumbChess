@@ -3,7 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 // return the number of moves needed for a knight to traverse from one square to another.
-func KnightDist (s1 chess.Square, s2 chess.Square) int {
+func KnightDist(s1 chess.Square, s2 chess.Square) int {
 	if s1 == s2 {
 		return 0
 	}
@@ -32,41 +32,41 @@ func KnightDist (s1 chess.Square, s2 chess.Square) int {
 	return 100
 }
 
-func knight_moves (sq chess.Square) []chess.Square {
+func knight_moves(sq chess.Square) []chess.Square {
 	f := File2Int(sq.File())
 	r := Rank2Int(sq.Rank())
 	var result []chess.Square
-	if f - 2 > 0 {
-		if r - 1 > 0 {
+	if f-2 > 0 {
+		if r-1 > 0 {
 			// Subtract one to count from zero, not one
-			result = append(result, chess.NewSquare(chess.File(f - 3), chess.Rank(r - 2)))
+			result = append(result, chess.NewSquare(chess.File(f-3), chess.Rank(r-2)))
 		}
-		if r + 1 < 9 {
-			result = append(result, chess.NewSquare(chess.File(f - 3), chess.Rank(r)))
-		}
-	}
-	if r + 2 < 9 {
-		if f - 1 > 0 {
-			result = append(result, chess.NewSquare(chess.File(f - 2), chess.Rank(r + 1)))
-		}
-		if f + 1 < 9 {
-			result = append(result, chess.NewSquare(chess.File(f), chess.Rank(r + 1)))
+		if r+1 < 9 {
+			result = append(result, chess.NewSquare(chess.File(f-3), chess.Rank(r)))
 		}
 	}
-	if f + 2 < 9 {
-		if r - 1 > 0 {
-			result = append(result, chess.NewSquare(chess.File(f + 1), chess.Rank(r - 2)))
+	if r+2 < 9 {
+		if f-1 > 0 {
+			result = append(result, chess.NewSquare(chess.File(f-2), chess.Rank(r+1)))
 		}
-		if r + 1 < 9 {
-			result = append(result, chess.NewSquare(chess.File(f + 1), chess.Rank(r)))
+		if f+1 < 9 {
+			result = append(result, chess.NewSquare(chess.File(f), chess.Rank(r+1)))
 		}
 	}
-	if r - 2 > 0 {
-		if f - 1 > 0 {
-			result = append(result, chess.NewSquare(chess.File(f - 2), chess.Rank(r - 3)))
+	if f+2 < 9 {
+		if r-1 > 0 {
+			result = append(result, chess.NewSquare(chess.File(f+1), chess.Rank(r-2)))
 		}
-		if f + 1 < 9 {
-			result = append(result, chess.NewSquare(chess.File(f), chess.Rank(r - 3)))
+		if r+1 < 9 {
+			result = append(result, chess.NewSquare(chess.File(f+1), chess.Rank(r)))
+		}
+	}
+	if r-2 > 0 {
+		if f-1 > 0 {
+			result = append(result, chess.NewSquare(chess.File(f-2), chess.Rank(r-3)))
+		}
+		if f+1 < 9 {
+			result = append(result, chess.NewSquare(chess.File(f), chess.Rank(r-3)))
 		}
 	}
 	return result

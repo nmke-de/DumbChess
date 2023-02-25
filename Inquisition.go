@@ -30,19 +30,19 @@ func (this Inquisition) move(game *chess.Game) *chess.Move {
 			eval += 1
 		}
 		switch game.Position().Board().Piece(m.S1()).Type() {
-			case chess.Bishop:
-				eval += 4 - max(BishopDist(m.S2(), sq), 3)
-			case chess.Pawn:
-				eval += 1
+		case chess.Bishop:
+			eval += 4 - max(BishopDist(m.S2(), sq), 3)
+		case chess.Pawn:
+			eval += 1
 		}
 		switch game.Position().Board().Piece(m.S2()).Type() {
-			case chess.NoPieceType:
-				eval += 0
-			case chess.Bishop:
-				// Heresy!
-				eval += 10
-			default:
-				eval += 1
+		case chess.NoPieceType:
+			eval += 0
+		case chess.Bishop:
+			// Heresy!
+			eval += 10
+		default:
+			eval += 1
 		}
 		if eval > ceval {
 			ceval = eval

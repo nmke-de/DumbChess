@@ -2,7 +2,7 @@ package main
 
 import "github.com/notnil/chess"
 
-type SwissSafe struct {}
+type SwissSafe struct{}
 
 func (this SwissSafe) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
@@ -29,21 +29,31 @@ func (this SwissSafe) move(game *chess.Game) *chess.Move {
 				// Consider capture against any piece
 				if predicted.HasTag(chess.Capture) {
 					switch game.Position().Board().Piece(predicted.S2()).Type() {
-						case chess.Pawn: eval += 1
-						case chess.Bishop, chess.Knight: eval += 3
-						case chess.Rook: eval += 5
-						case chess.Queen: eval += 9
-						default: eval += 0
+					case chess.Pawn:
+						eval += 1
+					case chess.Bishop, chess.Knight:
+						eval += 3
+					case chess.Rook:
+						eval += 5
+					case chess.Queen:
+						eval += 9
+					default:
+						eval += 0
 					}
 				}
 				// Consider capture against moved piece
 				if predicted.S2() == m.S2() {
 					switch game.Position().Board().Piece(m.S1()).Type() {
-						case chess.Pawn: eval += 1
-						case chess.Bishop, chess.Knight: eval += 3
-						case chess.Rook: eval += 5
-						case chess.Queen: eval += 9
-						default: eval += 0
+					case chess.Pawn:
+						eval += 1
+					case chess.Bishop, chess.Knight:
+						eval += 3
+					case chess.Rook:
+						eval += 5
+					case chess.Queen:
+						eval += 9
+					default:
+						eval += 0
 					}
 					break
 				}

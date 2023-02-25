@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/notnil/chess"
 	"os"
 	"strconv"
-	"github.com/notnil/chess"
 )
 
 func main() {
@@ -23,13 +23,13 @@ func main() {
 					continue
 				}
 				switch match(w, b) {
-					case chess.WhiteWon:
-						whitePlayers[w] += 2
-					case chess.BlackWon:
-						blackPlayers[b] += 2
-					default:
-						whitePlayers[w] += 1
-						blackPlayers[b] += 1
+				case chess.WhiteWon:
+					whitePlayers[w] += 2
+				case chess.BlackWon:
+					blackPlayers[b] += 2
+				default:
+					whitePlayers[w] += 1
+					blackPlayers[b] += 1
 				}
 			}
 		}

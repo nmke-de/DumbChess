@@ -3,6 +3,7 @@ package main
 import "github.com/notnil/chess"
 
 type KnightlyOrder bool
+
 func (this KnightlyOrder) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()
 	var best []*chess.Move

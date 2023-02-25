@@ -1,20 +1,18 @@
 package main
 
-
 import (
-	"math/rand"
-	"time"
 	"github.com/notnil/chess"
 	"github.com/notnil/chess/uci"
+	"math/rand"
+	"time"
 )
-
 
 // (stateless) UCI player. Requires the related engine (i.e. Stockfish) to be installed.
 type UCI struct {
 	exec string
 }
 
-func newUCI (exec string) UCI {
+func newUCI(exec string) UCI {
 	return UCI{exec}
 }
 

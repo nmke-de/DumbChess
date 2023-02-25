@@ -30,18 +30,18 @@ func (this Rookies) move(game *chess.Game) *chess.Move {
 			eval += 2 * (3 - RookDist(m.S2(), sq))
 		}
 		switch game.Position().Board().Piece(m.S1()).Type() {
-			case chess.Rook:
-				eval += 2 * (3 - RookDist(m.S2(), sq))
-			case chess.Pawn:
-				eval += 4 - Dist2Edge(m.S1())
+		case chess.Rook:
+			eval += 2 * (3 - RookDist(m.S2(), sq))
+		case chess.Pawn:
+			eval += 4 - Dist2Edge(m.S1())
 		}
 		switch game.Position().Board().Piece(m.S2()).Type() {
-			case chess.NoPieceType:
-				eval += 0
-			case chess.Rook:
-				eval += 1
-			default:
-				eval += 2
+		case chess.NoPieceType:
+			eval += 0
+		case chess.Rook:
+			eval += 1
+		default:
+			eval += 2
 		}
 		if eval > ceval {
 			ceval = eval

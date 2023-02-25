@@ -10,7 +10,7 @@ func BishopDist(s1 chess.Square, s2 chess.Square) int {
 	if square_color(s1) != square_color(s2) {
 		return 65
 	}
-	if abs(File2Int(s1.File()) - File2Int(s2.File())) == abs(Rank2Int(s1.Rank()) - Rank2Int(s2.Rank())) {
+	if abs(File2Int(s1.File())-File2Int(s2.File())) == abs(Rank2Int(s1.Rank())-Rank2Int(s2.Rank())) {
 		return 1
 	}
 	return 2
