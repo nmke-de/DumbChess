@@ -20,6 +20,8 @@ var playerList []Player = []Player{
 	KnightlyOrder(true),
 	LadiesFirst{},
 	LastValid(true),
+	ManhattanHuddle(true),
+	ManhattanSwarm(true),
 	MaxOpponentMoves(true),
 	MinOpponentMoves(true),
 	newNotSinglePiece(),
