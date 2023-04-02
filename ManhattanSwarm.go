@@ -46,5 +46,5 @@ func (this ManhattanSwarm) move(game *chess.Game) *chess.Move {
 }
 
 func (this ManhattanSwarm) name() string {
-	return "Manhattan Swarm"
+	return "Manhattan's warm."
 }
