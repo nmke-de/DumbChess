@@ -25,15 +25,20 @@ func (this KingOfTheHill) move(game *chess.Game) *chess.Move {
 	var best []*chess.Move
 	ceval := 0
 	for _, m := range valid {
-		// Only interested in the king
+		eval := 0
+		// Only interested in the king (unless he can't move)
 		if game.Position().Board().Piece(m.S1()).Type() != chess.King {
-			continue
+			if abs(File2Int(m.S1().File()) - 5) < 2 {
+				eval = 1
+			}
+		} else {
+			// Only move the king if he is not king of the hill already
+			if Dist2Edge(m.S1()) == 3 {
+				continue
+			}
+			eval = Dist2Edge(m.S2()) + 2
 		}
-		// Only move the king if he is not king of the hill already
-		if Dist2Edge(m.S1()) == 3 {
-			continue
-		}
-		eval := Dist2Edge(m.S2())
+		
 		if eval > ceval {
 			ceval = eval
 			best = []*chess.Move{m}
