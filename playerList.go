@@ -1,6 +1,7 @@
 package main
 
 var playerList []Player = []Player{
+	AncienRegime{},
 	AssassinationClassroom(true),
 	Burglar(true),
 	Careful(true),
