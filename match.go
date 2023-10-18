@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/notnil/chess"
 	"math/rand"
+	"os"
 	"time"
 )
 
@@ -31,6 +32,6 @@ func match(white, black Player) chess.Outcome {
 	print("Cause: ")
 	println(EvalMethod(game.Method()))
 	print("Moves: ")
-	println(game.String())
+	os.Stdout.Write([]byte(game.String() + "\n"))
 	return game.Outcome()
 }
