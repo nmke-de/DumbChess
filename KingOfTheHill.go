@@ -28,7 +28,7 @@ func (this KingOfTheHill) move(game *chess.Game) *chess.Move {
 		eval := 0
 		// Only interested in the king (unless he can't move)
 		if game.Position().Board().Piece(m.S1()).Type() != chess.King {
-			if abs(File2Int(m.S1().File()) - 5) < 2 {
+			if abs(File2Int(m.S1().File())-5) < 2 {
 				eval = 1
 			}
 		} else {
@@ -38,7 +38,7 @@ func (this KingOfTheHill) move(game *chess.Game) *chess.Move {
 			}
 			eval = Dist2Edge(m.S2()) + 2
 		}
-		
+
 		if eval > ceval {
 			ceval = eval
 			best = []*chess.Move{m}

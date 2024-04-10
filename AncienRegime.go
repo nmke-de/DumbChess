@@ -2,7 +2,7 @@ package main
 
 import "github.com/notnil/chess"
 
-type AncienRegime struct {}
+type AncienRegime struct{}
 
 func (this AncienRegime) move(game *chess.Game) *chess.Move {
 	valid := game.ValidMoves()

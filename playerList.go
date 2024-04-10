@@ -3,6 +3,7 @@ package main
 var playerList []Player = []Player{
 	AncienRegime{},
 	AssassinationClassroom(true),
+	BottomUp{},
 	Burglar(true),
 	Careful(true),
 	Careless(true),
@@ -42,6 +43,7 @@ var playerList []Player = []Player{
 	SuicideKing(true),
 	Swarm(true),
 	SwissSafe{},
+	TopDown{},
 	Traveller(true),
 	Unsafe{},
 }
